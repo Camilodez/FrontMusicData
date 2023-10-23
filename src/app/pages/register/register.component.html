@@ -12,94 +12,61 @@
 </div>
 <div class="page">
   <div class="page">
-  <div class="container">
-    <div class="overlay-image"></div>
-    <div class="title">Registrarse</div>
-    <div class="form">
-      <div class="input">
-        <label for="fullname">Nombre completo *</label>
-        <br>
-        <br>
-        <input type="text" id="fullname" placeholder="John Doe">
-      </div>
-      <div class="input">
-        <label for="country">País *</label>
-        <br>
-        <br>
-        <select id="country" name="country">
-          <option value="" disabled selected>ESCOJA UNA OPCÍON</option>
-          <option value="Antigua y Barbuda">Antigua y Barbuda</option>
-          <option value="Argentina">Argentina</option>
-          <option value="Bahamas">Bahamas</option>
-          <option value="Barbados">Barbados</option>
-          <option value="Belice">Belice</option>
-          <option value="Bolivia">Bolivia</option>
-          <option value="Brasil">Brasil</option>
-          <option value="Canadá">Canadá</option>
-          <option value="Chile">Chile</option>
-          <option value="Colombia">Colombia</option>
-          <option value="Costa Rica">Costa Rica</option>
-          <option value="Cuba">Cuba</option>
-          <option value="Dominica">Dominica</option>
-          <option value="Ecuador">Ecuador</option>
-          <option value="El Salvador">El Salvador</option>
-          <option value="Estados Unidos">Estados Unidos</option>
-          <option value="Granada">Granada</option>
-          <option value="Guatemala">Guatemala</option>
-          <option value="Guyana">Guyana</option>
-          <option value="Haití">Haití</option>
-          <option value="Honduras">Honduras</option>
-          <option value="Jamaica">Jamaica</option>
-          <option value="México">México</option>
-          <option value="Nicaragua">Nicaragua</option>
-          <option value="Panamá">Panamá</option>
-          <option value="Paraguay">Paraguay</option>
-          <option value="Perú">Perú</option>
-          <option value="Santa Lucía">Santa Lucía</option>
-          <option value="San Cristóbal y Nieves">San Cristóbal y Nieves</option>
-          <option value="San Vicente y las Granadinas">San Vicente y las Granadinas</option>
-          <option value="Surinam">Surinam</option>
-          <option value="Trinidad y Tobago">Trinidad y Tobago</option>
-          <option value="Uruguay">Uruguay</option>
-          <option value="Venezuela">Venezuela</option>
-        </select>
-      </div>
-      <div class="input">
-        <label for="birthdate">Fecha de Nacimiento *</label>
-        <br>
-        <br>
-        <input type="date" id="birthdate">
+    <div class="container">
+      <div class="overlay-image"></div>
+      <div class="title">Registrarse</div>
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="fullname"><strong>Nombre completo *</strong></label>
+          <br>
+          <br>
+          <input type="text" class="form-control" id="fullname" formControlName="fullname" required>
+          <br>
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="country">País *</label>
+          <br>
+          <br>
+          <select class="form-control" id="country" formControlName="country">
+            <option value="" disabled selected>ESCOJA UNA OPCIÓN</option>
+            <option value="Antigua y Barbuda">Antigua y Barbuda</option>
+            <option value="Argentina">Argentina</option>
+          </select>
+          <br>
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="birthdate">Fecha de nacimiento *</label>
+          <br>
+          <br>
+          <input type="date" class="form-control" id="birthdate" formControlName="birthdate" required>
+          <br>
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo electrónico *</label>
+          <br>
+          <br>
+          <input type="email" class="form-control" id="email" formControlName="email" required>
+          <br>
+          <br>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña *</label>
+          <br>
+          <br>
+          <input type="password" class="form-control" id="password" formControlName="password" required minlength="8">
+          <br>
+          <br>
+        </div>
+        <button class="button" id="registerButton" [disabled]="!registerForm.valid">Registrarme</button>
+        <div class="divider"></div>
+        <div class="back-to-login">¿Ya tienes una cuenta? <a href="/FrontMusicData/src/app/pages/login/login.component.html?_ijt=pjk5fi9r0n8ka6g9q9a0goadpt&_ij_reload=RELOAD_ON_SAVE">Iniciar sesión</a></div>
+      </form>
     </div>
-      <div class="input">
-        <label for="email">Correo electrónico *</label>
-        <br>
-        <br>
-        <input type="email" id="email" placeholder="example@gmail.com">
-      </div>
-      <div class="input">
-        <label for="password">Contraseña *</label>
-        <br>
-        <br>
-        <input type="password" id="password" placeholder="Ingrese 8+ caracteres">
-        <br>
-      </div>
-      <div class="input-checkbox">
-        <input type="checkbox" id="accept" name="accept">
-        <label for="accept" class="label-terms">Acepto los Términos y Condiciones</label>
-      </div>
-      <button class="button" id="registerButton">Registrar</button>
-      <div class="error-message" id="errorMessage"></div>
-    </div>
-    <div class="divider"></div>
-    <div class="back-to-login">¿Ya tienes una cuenta? <a href="index.html">Iniciar sesión</a></div>
   </div>
 </div>
-<div class="overlay" id="successMessage">
-  <div class="overlay-content">
-    <p>La cuenta se ha creado exitosamente.</p>
-    <a href="index.html" id="closeOverlay">Iniciar Sesión</a>
-  </div>
-</div>
-<script src="script.js"></script>
 </body>
 </html>
+

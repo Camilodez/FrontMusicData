@@ -232,3 +232,16 @@ button.button:hover {
 #closeOverlay:hover {
   background-color: #B800E6;
 }
+
+.small-font {
+  font-size: 14px; /* Ajusta el tamaño de fuente según tus preferencias */
+}
+
+/* Para alinear la casilla de verificación a la izquierda */
+input[type="checkbox"] {
+  margin-right: 5px; /* Espacio entre la casilla y el texto */
+  display: flex;
+  align-items: baseline;
+}
+
+
